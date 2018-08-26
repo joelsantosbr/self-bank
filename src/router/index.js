@@ -27,7 +27,7 @@ const routes = [
   {
     path: '/maquininhas',
     name: 'maquininhas',
-    component: Maquininhas,
+    component: CadastroMaquina,
   },
   {
     path: '/cadastrar-maquininha',
