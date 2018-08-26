@@ -233,7 +233,7 @@ export default {
     handleCadastro() {
       this.getAddressByCEP();
       this.entity = this.entityLocal;
-      this.$router.push('/maquininhas');
+      this.$router.push('/cadastrar-maquininha');
     },
 
     async getAddressByCEP() {

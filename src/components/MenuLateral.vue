@@ -1,7 +1,7 @@
 <template lang="html">
   <ul class="sidenav" id="sidenav-mobile">
     <li><a class="sidenav-close" href="#!" @click="$router.push('/home')" >Home</a></li>
-    <li><a class="sidenav-close" href="#!" @click="$router.push('/maquininhas')">Maquininhas</a></li>
+    <li><a class="sidenav-close" href="#!" @click="$router.push('/cadastrar-maquininha')">Maquininhas</a></li>
     <li><a class="sidenav-close" href="#!" @click="$router.push('/cadastrar')">Cadastrar</a></li>
   </ul>
 </template>
