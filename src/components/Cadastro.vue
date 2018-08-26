@@ -2,14 +2,15 @@
   <div id="cadastro" class="container">
     <div class="row">
         <form class="col s12">
-
           <div class="row">
             <div class="input-field col s12">
               <input
                 id="nome"
-                v-model="entity.name"
+                v-model="entityLocal.name"
+                :class="$v.entityLocal.name.$dirty ? 'invalid' : null"
                 type="text"
                 class="validate"
+                @input="$v.entityLocal.name.$touch()"
               >
               <label for="nome">Nome/Razão Social</label>
             </div>
@@ -19,9 +20,11 @@
             <div class="input-field col s12">
               <input
                 id="email"
-                v-model="entity.email"
+                v-model="entityLocal.email"
+                :class="$v.entityLocal.email.$dirty ? 'invalid' : null"
                 type="email"
                 class="validate"
+                @input="$v.entityLocal.email.$touch()"
               >
               <label for="email">E-mail</label>
             </div>
@@ -32,9 +35,11 @@
               <input
                 v-mask="['(##) ####-####', '(##) #####-####']"
                 id="phone"
-                v-model="entity.phone"
+                v-model="entityLocal.phone"
+                :class="$v.entityLocal.phone.$dirty ? 'invalid' : null"
                 type="tel"
                 class="validate"
+                @input="$v.entityLocal.phone.$touch()"
               >
               <label for="phone">Telefone</label>
             </div>
@@ -45,7 +50,9 @@
               <input
                 v-mask="['###.###.###-##', '##.###.###/####-##']"
                 id="cpf"
-                v-model="entity.cpf"
+                v-model="entityLocal.cpf"
+                :class="$v.entityLocal.cpf.$dirty ? 'invalid' : null"
+                @input="$v.entityLocal.cpf.$touch()"
                 type="text"
                 class="validate"
               >
@@ -57,7 +64,8 @@
           <div class="input-field col s12">
             <select
               id="bank-name"
-              v-model="entity.bank.name"
+              v-model="entityLocal.bank.name"
+              :class="$v.entityLocal.bank.name.$dirty ? 'invalid' : null"
             >
               <option value="itau">Itaú</option>
               <option value="bradesco">Bradesco</option>
@@ -67,22 +75,26 @@
           </div>
         </div>
 
-        <div class="row" v-show="entity.bank.name">
+        <div class="row" v-show="entityLocal.bank.name">
           <div class="input-field col s6">
             <input
               id="agencia"
-              v-model="entity.bank.agency"
+              v-model="entityLocal.bank.agency"
+              :class="$v.entityLocal.bank.agency.$dirty ? 'invalid' : null"
               type="text"
               class="validate"
+              @input="$v.entityLocal.bank.agency.$touch()"
             >
             <label for="agencia">Agência</label>
           </div>
           <div class="input-field col s6">
             <input
               id="conta"
-              v-model="entity.bank.account"
+              v-model="entityLocal.bank.account"
+              :class="$v.entityLocal.bank.account.$dirty ? 'invalid' : null"
               type="text"
               class="validate"
+              @input="$v.entityLocal.bank.account.$touch()"
             >
             <label for="conta">Conta</label>
           </div>
@@ -93,9 +105,11 @@
               <input
                 v-mask="'#####-###'"
                 id="endereco"
-                v-model="cep"
+                v-model="entityLocal.cep"
+                :class="$v.entityLocal.bank.account.$dirty ? 'invalid' : null"
                 type="text"
                 class="validate"
+                @input="$v.entityLocal.cep.$touch()"
                 @blur.native="getAddressByCEP"
               >
               <label for="endereco">CEP</label>
@@ -104,7 +118,7 @@
 
           <div class="row align-center">
             <div class="col s12 center-align">
-              <a class="waves-effect waves-light btn">Cadastrar</a>
+              <button type="button" :disabled="$v.entityLocal.$invalid || invalidButton" @click="handleCadastro" class="waves-effect waves-light btn">Cadastrar</button>
             </div>
           </div>
 
@@ -121,20 +135,36 @@ export default {
 
   data() {
     return {
-      cep: '02362-010',
       enderecoForHumans: '',
-      cepError: null,
+      invalidButton: false,
       addressAPI: {},
+      entityLocal: {
+        name: '',
+        cpf: '',
+        cep: '',
+        email: '',
+        phone: '',
+        bank: {
+          name: '',
+          agency: '',
+          account: '',
+        },
+        address: {
+          uf: '',
+          city: '',
+          region: '',
+          street: '',
+        },
+      },
     };
   },
 
   mounted() {
     M.AutoInit();
-    this.getAddressByCEP();
   },
 
   validations: {
-    entity: {
+    entityLocal: {
       name: {
         required,
       },
@@ -155,14 +185,10 @@ export default {
         agency: { required },
         account: { required },
       },
-      cep: { required },
-      address: {
-        street:  { required },
-        number:  {
-          required,
-          numeric,
-        },
-      }
+      cep: {
+        required,
+        minLength: minLength(9),
+      },
     },
   },
 
@@ -176,32 +202,38 @@ export default {
   watch: {
     addressAPI(values) {
       if (values.erro) {
-        this.address.uf = '';
-        this.address.city = '';
-        this.address.region = '';
-        this.address.street = '';
+        this.entityLocal.address.uf = '';
+        this.entityLocal.address.city = '';
+        this.entityLocal.address.region = '';
+        this.entityLocal.address.street = '';
         this.enderecoForHumans = '';
-        this.cepError = false;
-      } else this.cepError = true;
+      }
       const {
+        uf,
         bairro,
         localidade,
         logradouro,
-        uf,
       } = values;
       if (bairro && localidade && uf && logradouro) {
         this.enderecoForHumans = `${bairro}, ${localidade} - ${uf}`;
-        this.address.uf = uf;
-        this.address.city = localidade;
-        this.address.region = bairro;
-        this.address.street = logradouro;
+        this.entityLocal.address.city = localidade;
+        this.entityLocal.address.region = bairro;
+        this.entityLocal.address.uf = uf;
+        this.entityLocal.address.street = logradouro;
+      }
+    },
+    entity() {
+      if (!this.$v.entityLocal.$invalid) {
+        this.invalidButton = true;
       }
     },
   },
 
   methods: {
     handleCadastro() {
-
+      this.getAddressByCEP();
+      this.entity = this.entityLocal;
+      this.$router.push('/maquininhas');
     },
 
     async getAddressByCEP() {
@@ -210,9 +242,9 @@ export default {
       } else {
         this.addressAPI = {};
         this.enderecoForHumans = '';
-        this.address.uf = '';
-        this.address.city = '';
-        this.address.street = '';
+        this.entityLocal.address.uf = '';
+        this.entityLocal.address.city = '';
+        this.entityLocal.address.street = '';
       }
     }
   }

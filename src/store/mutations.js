@@ -4,4 +4,8 @@ export default {
     state.page_title = payload;
   },
 
+  SET_ENTITY(state, payload) {
+    state.entity = payload;
+  },
+
 };

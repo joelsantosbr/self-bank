@@ -43,7 +43,6 @@
 
 export default {
   mounted() {
-    M.AutoInit();
   }
 }
 </script>
