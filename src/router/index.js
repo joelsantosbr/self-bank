@@ -24,14 +24,6 @@ const routes = [
     component: Cadastro,
   },
   {
-<<<<<<< HEAD
-=======
-    path: '/maquininhas',
-    name: 'maquininhas',
-    component: CadastroMaquina,
-  },
-  {
->>>>>>> c25054c03749c61f799e6eeb27fd0e9b1b2fee20
     path: '/cadastrar-maquininha',
     name: 'cadastrar-maquininha',
     component: CadastroMaquina,
