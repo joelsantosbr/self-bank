@@ -1,7 +1,6 @@
 <template lang="html">
   <main>
-    <sb-header/>
-    <router-view/>
+    <sb-cadastro-maquina/>
     <sb-footer/>
   </main>
 </template>
