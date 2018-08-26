@@ -1,5 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+<<<<<<< HEAD
+=======
+import Home from '@/components/Home';
+>>>>>>> 7cb1675fc791ea9457d33a1b0e0c9123963b4e26
 import Cadastro from '@/components/Cadastro';
 import Maquininhas from '@/components/Maquininhas';
 import CadastroMaquina from '@/components/CadastroMaquina';
@@ -10,7 +14,12 @@ Vue.use(Router);
 const routes = [
   {
     path: '*',
-    redirect: 'cadastrar',
+    redirect: 'home',
+  },
+  {
+    path: '/home',
+    name: 'home',
+    component: Home,
   },
   {
     path: '/cadastrar',

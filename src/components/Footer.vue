@@ -1,7 +1,7 @@
 <template lang="html">
   <div id="footer-app" class="row center-xs middle-xs footer-app">
     <div class="col-xs">
-      <i class="material-icons">add_shopping_cart</i>
+      <img :src="imgFirstItem" alt="Investimento">
     </div>
     <div class="col-xs">
       <div class="footer-app__float-icon">
@@ -11,20 +11,22 @@
       </div>
     </div>
     <div class="col-xs">
-      <i class="material-icons">card_giftcard</i>
+      <img :src="imgSecondItem" alt="Empréstimo">
     </div>
   </div>
 </template>
 
 <script>
+import imgFirstItem from '@/assets/img/investimento.png';
+import imgSecondItem from '@/assets/img/emprestimo.png';
 export default {
 
   name: 'Footer',
 
   data: () => ({
     showSecondary: true,
-    firstItem: '',
-    secondItem: '',
+    imgFirstItem,
+    imgSecondItem,
   }),
 
 }

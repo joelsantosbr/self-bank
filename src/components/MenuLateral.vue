@@ -1,15 +1,26 @@
 <template lang="html">
   <ul class="sidenav" id="sidenav-mobile">
-    <li><a href="sass.html">Sass</a></li>
-    <li><a href="badges.html">Components</a></li>
-    <li><a href="collapsible.html">Javascript</a></li>
-    <li><a href="mobile.html">Mobile</a></li>
+    <li><a class="sidenav-close" href="#!" @click="$router.push('/home')" >Home</a></li>
+    <li><a class="sidenav-close" href="#!" @click="$router.push('/maquininhas')">Maquininhas</a></li>
+    <li><a class="sidenav-close" href="#!" @click="$router.push('/cadastrar')">Cadastrar</a></li>
   </ul>
 </template>
 
 <script>
 export default {
 
+  data() {
+    return {
+      elemn: '',
+    }
+  },
+
+  mounted() {
+    document.addEventListener('DOMContentLoaded', function() {
+      this.elemn = document.getElementById('sidenav-mobile');
+      const instance = M.Sidenav.init(this.elemn);
+    });
+  },
 }
 </script>
 
