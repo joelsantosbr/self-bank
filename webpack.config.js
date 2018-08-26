@@ -60,7 +60,6 @@ module.exports = {
         loader: 'babel-loader',
         include: [
           path.resolve(__dirname, 'src'),
-          require.resolve('material-design-icons-iconfont'),
         ],
         exclude: /node_modules/,
       },

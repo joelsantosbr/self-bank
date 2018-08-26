@@ -1,19 +1,22 @@
 <template lang="html">
   <main>
+    <sb-cadastro/>
     <sb-footer/>
   </main>
 </template>
 
 <script>
 import Footer from '@/components/Footer';
-import 'material-design-icons-iconfont/dist/material-design-icons.css';
-import 'vuetify/dist/vuetify.min.css';
+import Cadastro from '@/components/Cadastro';
+import 'materialize-css/dist/js/materialize.min.js';
+import 'materialize-css/dist/css/materialize.min.css';
 import 'flexboxgrid';
 
 export default {
 
   components: {
     'sb-footer': Footer,
+    'sb-cadastro': Cadastro,
   },
 
   data: () => ({

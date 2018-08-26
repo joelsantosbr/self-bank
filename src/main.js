@@ -1,14 +1,12 @@
 import Vue from 'vue';
 import VueTheMask from 'vue-the-mask';
 import Vuelidate from 'vuelidate';
-import Vuetify from 'vuetify';
 import Default from './containers/Default.vue';
 import store from './store';
 import router from './router';
 
 Vue.use(VueTheMask);
 Vue.use(Vuelidate);
-Vue.use(Vuetify);
 
 // Vue.config.devtools = false
 // Vue.config.debug = false
