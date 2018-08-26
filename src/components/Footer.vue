@@ -1,7 +1,9 @@
 <template lang="html">
   <div id="footer-app" class="row center-xs middle-xs footer-app">
     <div class="col-xs">
-      <img :src="imgFirstItem" alt="Investimento">
+        <router-link :to="{ name: 'credito', params: {} }">
+      <img :src="imgFirstItem" alt="Investimento"> 
+        </router-link>
     </div>
     <div class="col-xs">
       <div class="footer-app__float-icon">
@@ -11,7 +13,9 @@
       </div>
     </div>
     <div class="col-xs">
-      <img :src="imgSecondItem" alt="Empréstimo">
+        <router-link :to="{ name: 'emprestimo', params: {} }">
+      <img :src="imgSecondItem" alt="Empréstimo"> 
+        </router-link>
     </div>
   </div>
 </template>
