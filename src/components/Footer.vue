@@ -38,21 +38,27 @@ export default {
   color: #FFF;
   height: 70px;
   cursor: pointer;
-  background-color: blue;
+  background-color: #598FE2;
+
+  .v-icon { font-size: 32px; }
+
   &__float-icon {
     display: inline-block;
     width: 70px;
     height: 70px;
     margin-bottom: 70px;
-    font-size: 42px;
+    font-size: 48px;
     border-radius: 100%;
+    background-color: #00F898;
     transition: .4s margin ease-in-out;
-    border: 6px solid #FFF;
-    background-color: #000;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, .24);
+
+    .v-icon { font-size: 42px; }
+
+    &:active,
     &:hover {
       margin-bottom: 40px;
     }
   }
-  .v-icon { font-size: 32px; }
 }
 </style>
