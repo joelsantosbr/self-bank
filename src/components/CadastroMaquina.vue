@@ -47,14 +47,14 @@
 
             <div class="row card-content">
               <div class="input-field col s12">
-                <input disabled value="1234029 - 92929292-m00" type="text" class="validate">
+                <input value="1234029 - 92929292-m00" type="text" class="validate">
                 <label for="nome">Nº de Identificação</label>
               </div>
             </div>
 
             <div class="row card-content">
               <div class="input-field col s12">
-                <input disabled value="1234029 - 92929292-m00" type="text" class="validate">
+                <input value="1234029 - 92929292-m00" type="text" class="validate">
                <label for="cpf">Nº de Contrato</label>
               </div>
             </div>
