@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "airbnb-base",
+    "plugin:vue/recommended"
+  ],
+  "rules": {
+    "no-new": 0
+  },
+ "parserOptions": {
+    "ecmaVersion": 2017
+  }
+}

@@ -1,0 +1,16 @@
+* { box-sizing: content-box; }
+body {
+  font-family: Roboto, sans-serif;
+  padding-bottom: 150px;
+}
+.row { margin-bottom: 0; }
+.display-none {
+  display: none!important;
+}
+strong { font-weight: bold; }
+.text-center { text-align: center; }
+
+
+.btn {
+	background: #00f898;
+}
