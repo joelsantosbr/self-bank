@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import ModalTest from '@/components/ModalTest';
 import Cadastro from '@/components/Cadastro';
 import Maquininhas from '@/components/Maquininhas';
 import CadastroMaquina from '@/components/CadastroMaquina';
@@ -26,11 +25,6 @@ const routes = [
     path: '/cadastrar-maquininha',
     name: 'cadastrar-maquininha',
     component: CadastroMaquina,
-  },
-  {
-    path: '/modal-teste',
-    name: 'modal-test',
-    component: ModalTest,
   },
 ];
 
