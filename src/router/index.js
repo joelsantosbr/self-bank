@@ -5,6 +5,7 @@ import Cadastro from '@/components/Cadastro';
 import Maquininhas from '@/components/Maquininhas';
 import CadastroMaquina from '@/components/CadastroMaquina';
 import Emprestimo from '@/components/Emprestimo';
+import Credito from '@/components/Credito';
 
 Vue.use(Router);
 
@@ -37,6 +38,11 @@ const routes = [
     path: '/emprestimo',
     name: 'emprestimo',
     component: Emprestimo,
+  },
+  {
+    path: '/credito',
+    name: 'credito',
+    component: Credito,
   },
 ];
 

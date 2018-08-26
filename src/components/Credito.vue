@@ -3,16 +3,16 @@
 
 		<div class="row right-align top-money">
 			<div class="col s12">
-				<span class="toptext">Saldo_à_Pagar</span>
+				<span class="toptext">Saldo_à_Receber</span>
 				<br>
-				<span class="toptext"><b>R$ 1650,00</b></span>
+				<span class="toptext"><b>R$ 1040,00</b></span>
 			</div>
 		</div>
 
 
 		<div class="row align-center">
           <div class="col s12 center-align">
-            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Quero um empréstimo</a>
+            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Quero Investir</a>
           </div>
         </div>
 
@@ -21,12 +21,11 @@
 
         <div class="row home__transations">
 	      <div class="col s4 left-align">
-	        <strong>Crédito a vista</strong><br>
+	        <strong>Crédito</strong><br>
 	        <span class="home__money">R$ 1000,00</span>
 	      </div>
 	      <div class="col s5 offset-s3 right-align">
-	        <strong>para 30 dias</strong><br>
-	        <strong class="home_money">-5,2%</strong> <span class="homemoney home_money--green">R$ 1000,00</span>
+	        <strong class="home_money">+4%</strong> <span class="homemoney home_money--green">R$ 1040,00</span>
 	      </div>
 	    </div>
 
@@ -34,12 +33,11 @@
 
         <div class="row home__transations">
 	      <div class="col s4 left-align">
-	        <strong>Crédito a vista</strong><br>
+	        <strong>Crédito</strong><br>
 	        <span class="home__money">R$ 1000,00</span>
 	      </div>
 	      <div class="col s5 offset-s3 right-align">
-	        <strong>para 30 dias</strong><br>
-	        <strong class="home_money">-5,2%</strong> <span class="homemoney home_money--green">R$ 1000,00</span>
+	        <strong class="home_money">+4%</strong> <span class="homemoney home_money--green">R$ 1000,00</span>
 	      </div>
 	    </div>
 
@@ -89,7 +87,7 @@
 
 		        	<div class="row center-align">
 		        		<div class="col s12">
-            				<a class="waves-effect waves-light btn modal-close ">Solicitar Empréstimo</a>
+            				<a class="waves-effect waves-light btn modal-close ">Fazer Investimento</a>
 		        		</div>
 		        	</div>
 		        </div>
@@ -103,7 +101,7 @@
 <script>
 export default {
 
-  name: 'Emprestimo',
+  name: 'Credito',
 
   data () {
     return {
