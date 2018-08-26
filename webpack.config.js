@@ -60,12 +60,12 @@ module.exports = {
         loader: 'babel-loader',
         include: [
           path.resolve(__dirname, 'src'),
-          require.resolve('bootstrap-vue'),
+          require.resolve('material-design-icons-iconfont'),
         ],
         exclude: /node_modules/,
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|jpg|gif|svg|woff|woff2|eot|ttf)$/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]?[hash]',
