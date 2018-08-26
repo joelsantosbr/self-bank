@@ -3,7 +3,7 @@
 
 		<div class="row right-align top-money">
 			<div class="col s12">
-				<span class="toptext">Saldo_à_Pagar</span>
+				<span class="toptext">Saldo_à_Receber</span>
 				<br>
 				<span class="toptext"><b>R$ 1650,00</b></span>
 			</div>
@@ -15,6 +15,35 @@
             <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Quero um empréstimo!</a>
           </div>
         </div>
+
+        <br>
+        <br>
+
+        <div class="row home__transations">
+	      <div class="col s4 left-align">
+	        <strong>Crédito a vista</strong><br>
+	        <span class="home__money">R$ 1000,00</span>
+	      </div>
+	      <div class="col s5 offset-s3 right-align">
+	        <strong>para 30 dias</strong><br>
+	        <strong class="home_money">-5,2%</strong> <span class="homemoney home_money--green">R$ 1000,00</span>
+	      </div>
+	    </div>
+
+	    <hr>
+
+        <div class="row home__transations">
+	      <div class="col s4 left-align">
+	        <strong>Crédito a vista</strong><br>
+	        <span class="home__money">R$ 1000,00</span>
+	      </div>
+	      <div class="col s5 offset-s3 right-align">
+	        <strong>para 30 dias</strong><br>
+	        <strong class="home_money">-5,2%</strong> <span class="homemoney home_money--green">R$ 1000,00</span>
+	      </div>
+	    </div>
+
+	    <hr>
 
         <br>
 		<div id="modal1" class="modal">
