@@ -7,7 +7,7 @@
     </div>
     <div class="col-xs">
       <div class="footer-app__float-icon">
-        <router-link :to="{ name: 'maquininhas', params: {} }">
+        <router-link :to="{ name: 'cadastrar-maquininha', params: {} }">
           <i class="material-icons">add</i>
         </router-link>
       </div>

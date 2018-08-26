@@ -2,7 +2,6 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Home from '@/components/Home';
 import Cadastro from '@/components/Cadastro';
-import Maquininhas from '@/components/Maquininhas';
 import CadastroMaquina from '@/components/CadastroMaquina';
 import Emprestimo from '@/components/Emprestimo';
 import Credito from '@/components/Credito';
@@ -23,11 +22,6 @@ const routes = [
     path: '/cadastrar',
     name: 'cadastrar',
     component: Cadastro,
-  },
-  {
-    path: '/maquininhas',
-    name: 'maquininhas',
-    component: CadastroMaquina,
   },
   {
     path: '/cadastrar-maquininha',
