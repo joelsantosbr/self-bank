@@ -11,41 +11,30 @@
 
 
 		<div class="row align-center">
-          <div class="col s12 center-align">
-            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Quero um empréstimo</a>
-          </div>
-        </div>
+      <div class="col s12 center-align">
+        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Quero um empréstimo</a>
+      </div>
+    </div>
 
-        <br>
-        <br>
+    <br>
+    <br>
 
-        <div class="row home__transations">
-	      <div class="col s4 left-align">
-	        <strong>Crédito a vista</strong><br>
-	        <span class="home__money">R$ 1000,00</span>
-	      </div>
-	      <div class="col s5 offset-s3 right-align">
-	        <strong>para 30 dias</strong><br>
-	        <strong class="home_money">-5,2%</strong> <span class="homemoney home_money--green">R$ 1000,00</span>
-	      </div>
-	    </div>
 
-	    <hr>
+		<div v-for="emprestimo in emprestimos">
+	    <div class="row home__transations">
+		    <div class="col s4 left-align">
+		      <strong>{{ emprestimo.titulo }}</strong><br>
+		      <span class="home__money">R$ {{ emprestimo.valor }}</span>
+		    </div>
+		    <div class="col s5 offset-s3 right-align">
+		      <strong>{{ emprestimo.prazo }}</strong><br>
+		      <strong class="home_money">{{ emprestimo.taxa }}</strong> <span class="homemoney home_money--green">R$ {{ emprestimo.valor_pagamento }}</span>
+		    </div>
+		  </div>
+		  <hr>
+		</div>
 
-        <div class="row home__transations">
-	      <div class="col s4 left-align">
-	        <strong>Crédito a vista</strong><br>
-	        <span class="home__money">R$ 1000,00</span>
-	      </div>
-	      <div class="col s5 offset-s3 right-align">
-	        <strong>para 30 dias</strong><br>
-	        <strong class="home_money">-5,2%</strong> <span class="homemoney home_money--green">R$ 1000,00</span>
-	      </div>
-	    </div>
-
-	    <hr>
-
-        <br>
+	  <br>
 		<div id="modal1" class="modal">
 			<div class="container">
 		        <div class="row right-align" style='padding-top: 10px'>
@@ -89,7 +78,7 @@
 
 		        	<div class="row center-align">
 		        		<div class="col s12">
-            				<a class="waves-effect waves-light btn modal-close ">Solicitar Empréstimo</a>
+            				<a @click="pedirEmprestimo" class="waves-effect waves-light btn modal-close ">Solicitar Empréstimo</a>
 		        		</div>
 		        	</div>
 		        </div>
@@ -108,6 +97,15 @@ export default {
   data () {
     return {
     	range: 0,
+			emprestimos: [
+				{
+					titulo: 'Crédito a vista',
+					prazo: 'para 30 dias',
+					valor: 1000,
+					taxa: 5.2,
+					valor_pagamento: 1052,
+				}
+			]
     }
   },
 
@@ -121,11 +119,18 @@ export default {
   mounted() {
     this.page_title = 'Meus_Empréstimos';
     M.AutoInit();
-    document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.init(elems);
-  });
-  }
+	    document.addEventListener('DOMContentLoaded', function() {
+	    var elems = document.querySelectorAll('.modal');
+	    var instances = M.Modal.init(elems);
+	  });
+	},
+
+	methods: {
+		pedirEmprestimo() {
+			const taxa = 5.2,
+						valor_pagamento = ((taxa / 100) * this.range) + this.range;
+		}
+	}
 }
 </script>
 

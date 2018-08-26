@@ -43,7 +43,7 @@ const routes = [
 const router = new Router({
   routes,
   mode: 'history',
-  base: '/',
+  base: '/self-bank/',
   linkActiveClass: 'active-section',
   linkExactActiveClass: 'current-section',
 });
