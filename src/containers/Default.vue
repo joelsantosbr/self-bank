@@ -1,7 +1,8 @@
 <template lang="html">
   <main>
-    <sb-cadastro-maquina/>
-    <sb-footer/>
+    <sb-header/>
+    <router-view/>
+    <sb-footer :class="{ 'display-none': $route.path==='/cadastrar'}"/>
   </main>
 </template>
 
@@ -23,10 +24,5 @@ export default {
 </script>
 
 <style lang="scss">
-* { box-sizing: content-box; }
-body {
-  font-family: Roboto, sans-serif;
-  padding-bottom: 100px;
-}
-.row { margin-bottom: 0; }
+@import '../assets/scss/main.scss';
 </style>

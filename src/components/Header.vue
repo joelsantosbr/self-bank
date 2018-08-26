@@ -2,7 +2,8 @@
   <header>
     <nav class="menu-header">
      <div class="nav-wrapper">
-       <a href="#!" :class="{ 'display-none': $route.path==='/cadastrar'}" @click="$router.go(-1)" class="brand-logo left"><i class="material-icons">arrow_back</i> <strong class="menu-header__page-title">{{ page_title }}</strong></a>
+       <a href="#!" @click="$router.go(-1)" class="brand-logo left">
+         <i class="material-icons" :class="{ 'display-none': $route.path==='/cadastrar'}">arrow_back</i> <strong class="menu-header__page-title">{{ page_title }}</strong></a>
        <ul class="right">
          <li><a href="#" data-target="sidenav-mobile" class="sidenav-trigger"><i class="material-icons">more_vert</i></a></li>
        </ul>
@@ -48,8 +49,5 @@ export default {
     font-weight: bold;
   }
 
-  .display-none {
-    display: none;
-  }
 }
 </style>

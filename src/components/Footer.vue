@@ -37,8 +37,9 @@ export default {
   right: 0;
   bottom: 0;
   left: 0;
-  color: #FFF;
   height: 56px;
+  z-index: 2;
+  color: #FFF;
   cursor: pointer;
   background-color: #1461d7;
 
@@ -46,8 +47,8 @@ export default {
     content: '';
     position: absolute;
     width: 100%;
-    height: 50px;
-    top: -50px;
+    height: 40px;
+    top: -40px;
     background-color: #FFF;
   }
 
@@ -61,7 +62,7 @@ export default {
     display: inline-block;
     width: 56px;
     height: 56px;
-    z-index: 1;
+    z-index: 2;
     margin-bottom: 56px;
     border-radius: 100%;
     background-color: #00F898;
