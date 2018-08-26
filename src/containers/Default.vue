@@ -29,4 +29,8 @@ export default {
 body {
   font-family: Roboto, sans-serif;
 }
+
+.row {
+  margin-bottom: 0px;
+}
 </style>
