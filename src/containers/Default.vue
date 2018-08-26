@@ -9,6 +9,7 @@
 <script>
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
+import HeaderRecebiveis from '@/components/HeaderRecebiveis';
 import 'materialize-css/dist/js/materialize.min.js';
 import 'materialize-css/dist/css/materialize.min.css';
 import 'flexboxgrid';
@@ -17,6 +18,7 @@ export default {
 
   components: {
     'sb-header': Header,
+    'sb-header-recebiveis': HeaderRecebiveis,
     'sb-footer': Footer,
   },
 

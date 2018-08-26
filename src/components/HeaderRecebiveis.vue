@@ -3,9 +3,10 @@
     <nav class="menu-header">
      <div class="nav-wrapper">
        <a href="#!" @click="$router.go(-1)" class="brand-logo left">
-         <i class="material-icons" :class="{ 'display-none': $route.path==='/cadastrar'}">arrow_back</i> <strong class="menu-header__page-title" v-html="page_title"></strong></a>
+         <i class="material-icons" :class="{ 'display-none': $route.path==='/cadastrar'}">arrow_back</i> <strong class="menu-header__page-title" v-html="page_title"></strong>
+       </a>
        <ul class="right">
-         <li><a href="#sidenav-mobile" data-target="sidenav-mobile" class="sidenav-trigger"><i class="material-icons">more_vert</i></a></li>
+         <li><a href="#" data-target="sidenav-mobile" class="sidenav-trigger"><i class="material-icons">more_vert</i></a></li>
        </ul>
      </div>
    </nav>
@@ -26,13 +27,14 @@ export default {
       get() { return this.$store.state.page_title; },
     },
   },
+
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .menu-header {
   margin-bottom: 20px;
-  background-color: #1461d7;
+  background-color: transparent;
 
   .material-icons { color: #00F898; }
   .sidenav-trigger { margin: 0; }

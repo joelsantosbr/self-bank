@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import ModalTest from '@/components/ModalTest';
+import Home from '@/components/Home';
 import Cadastro from '@/components/Cadastro';
 import Maquininhas from '@/components/Maquininhas';
 import CadastroMaquina from '@/components/CadastroMaquina';
@@ -10,7 +10,12 @@ Vue.use(Router);
 const routes = [
   {
     path: '*',
-    redirect: 'cadastrar',
+    redirect: 'home',
+  },
+  {
+    path: '/home',
+    name: 'home',
+    component: Home,
   },
   {
     path: '/cadastrar',
@@ -26,11 +31,6 @@ const routes = [
     path: '/cadastrar-maquininha',
     name: 'cadastrar-maquininha',
     component: CadastroMaquina,
-  },
-  {
-    path: '/modal-teste',
-    name: 'modal-test',
-    component: ModalTest,
   },
 ];
 
