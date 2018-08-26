@@ -11,7 +11,7 @@ Vue.use(Router);
 const routes = [
   {
     path: '*',
-    redirect: 'home',
+    redirect: 'cadastrar',
   },
   {
     path: '/home',

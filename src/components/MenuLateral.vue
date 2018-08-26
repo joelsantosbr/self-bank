@@ -4,6 +4,7 @@
     <li><a class="sidenav-close" @click="$router.push('/maquininhas')">Maquininhas</a></li>
     <li><a class="sidenav-close" @click="$router.push('/emprestimo')">Emprestimos</a></li>
     <li><a class="sidenav-close" @click="$router.push('/credito')">Investimentos</a></li>
+    <li><a class="sidenav-close" @click="$router.push('/cadastrar')">Cadastrar</a></li>
   </ul>
 </template>
 
