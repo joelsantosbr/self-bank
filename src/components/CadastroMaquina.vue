@@ -93,12 +93,20 @@ export default {
     cardExists: false
   }},
 
+  computed: {
+    page_title: {
+      get() { return this.$store.state.page_title; },
+      set(payload) { this.$store.dispatch('setPageTitle', payload) },
+    },
+  },
+
   mounted() {
     M.AutoInit();
     document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.init(elems);
-  });
+      var elems = document.querySelectorAll('.modal');
+      var instances = M.Modal.init(elems);
+    });
+    this.page_title = 'Maquininhas';
   }
 
 
