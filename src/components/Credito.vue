@@ -110,12 +110,20 @@ export default {
   },
 
   mounted() {
+    this.page_title = 'Meus_Investimentos';
     M.AutoInit();
     document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.modal');
     var instances = M.Modal.init(elems);
   });
-  }
+  }, 
+  
+  computed: {
+    page_title: {
+      get() { return this.$store.state.page_title; },
+      set(payload) { this.$store.dispatch('setPageTitle', payload) },
+    },
+  },
 }
 </script>
 

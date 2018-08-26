@@ -106,7 +106,7 @@ export default {
       var elems = document.querySelectorAll('.modal');
       var instances = M.Modal.init(elems);
     });
-    this.page_title = 'Maquininhas';
+    this.page_title = 'Suas_Máquininhas';
   }
 
 
@@ -116,7 +116,7 @@ export default {
 <style lang="css">
 
 .card .card-content {
-  padding: 0px 19px 0px 19px
+  margin-top: 20px
 }
 
 </style>

@@ -161,6 +161,7 @@ export default {
 
   mounted() {
     M.AutoInit();
+    this.page_title = 'Cadastro';
   },
 
   validations: {
@@ -197,6 +198,10 @@ export default {
       get() { return this.$store.state.entity },
       set(payload) { this.$store.dispatch('setEntity', payload) },
     },
+    page_title: {
+      get() { return this.$store.state.page_title; },
+      set(payload) { this.$store.dispatch('setPageTitle', payload) },
+    },
   },
 
   watch: {
@@ -228,6 +233,8 @@ export default {
       }
     },
   },
+
+
 
   methods: {
     handleCadastro() {
