@@ -5,7 +5,9 @@
     </div>
     <div class="col-xs">
       <div class="footer-app__float-icon">
-        <i class="material-icons">add</i>
+        <router-link :to="{ name: 'maquininhas', params: {} }">
+          <i class="material-icons">add</i>
+        </router-link>
       </div>
     </div>
     <div class="col-xs">
@@ -36,25 +38,40 @@ export default {
   bottom: 0;
   left: 0;
   color: #FFF;
-  height: 70px;
+  height: 56px;
   cursor: pointer;
-  background-color: #598FE2;
+  background-color: #1461d7;
 
-  .material-icons { font-size: 32px; }
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    top: -50px;
+    background-color: #FFF;
+  }
+
+  .material-icons {
+    font-size: 32px;
+    color: #00F898;
+  }
 
   &__float-icon {
+    position: relative;
     display: inline-block;
-    width: 70px;
-    height: 70px;
-    margin-bottom: 70px;
+    width: 56px;
+    height: 56px;
+    z-index: 1;
+    margin-bottom: 56px;
     border-radius: 100%;
     background-color: #00F898;
     transition: .4s margin ease-in-out;
     box-shadow: 0 6px 6px rgba(0, 0, 0, .24);
 
     .material-icons {
-      margin-top: 14px;
+      margin-top: 7px;
       font-size: 42px;
+      color: #FFF;
     }
 
     &:active,

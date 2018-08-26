@@ -1,18 +1,24 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Default from '../containers/Default';
+import Cadastro from '@/components/Cadastro';
+import Maquininhas from '@/components/Maquininhas';
 
 Vue.use(Router);
 
 const routes = [
   {
     path: '*',
-    redirect: 'home',
+    redirect: 'cadastrar',
   },
   {
-    path: '/home',
-    name: 'home',
-    component: Default,
+    path: '/cadastrar',
+    name: 'cadastrar',
+    component: Cadastro,
+  },
+  {
+    path: '/maquininhas',
+    name: 'maquininhas',
+    component: Maquininhas,
   },
 ];
 

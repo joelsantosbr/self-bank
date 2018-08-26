@@ -1,7 +1,7 @@
 export default {
 
-  SET_EXAMPLE(state, payload) {
-    state.categoria = payload;
+  SET_PAGE_TITLE(state, payload) {
+    state.page_title = payload;
   },
 
 };
